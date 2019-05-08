@@ -1,0 +1,135 @@
+.menu {
+  width: 100vw;
+  height: 55px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 3;
+  transition: height 1s ease; 
+  pointer-events: none;
+
+  &.is-open {
+    width: 100vw;
+    height: 190px;
+  }
+}
+.menu__clickArea {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 4;
+  // background: red;
+  pointer-events: all;
+
+}
+
+.menu__burger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-bottom: 10px solid var(--blue);
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 28px;
+  transition: transform 1s ease;
+
+  &.is-open {
+    transform: rotate(90deg) translate(-1px, -5px);
+    width: 30px;
+  }
+
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: var(--black);
+    width: 40px;
+    height: 10px;
+    bottom: -25px;
+    transition: opacity 1s 1s ease;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: var(--black);
+    width: 40px;
+    height: 10px;
+    top: -15px;
+    transition: transform 1s 1s ease;
+  }
+
+  &.is-open::before {
+    content: '';
+    transform: rotate(-90deg) translate(-15px, -25px);
+    background: var(--white);
+  }
+
+  &.is-open::after {
+    content: '';
+    opacity: 0;
+  }
+
+  &.is-white-bottom::after {
+    background: var(--white);
+  }
+
+  &.is-white-top::before {
+    background: var(--white);
+  }
+}
+
+
+.menuArea {
+  position: absolute;
+  height: 190px;
+  width: 100vw;
+  bottom : -190px;
+  text-align: center;
+  background: #333333e1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: bottom 1s ease; 
+  pointer-events: all;
+
+
+  &.is-open {
+   bottom : 0px;
+  }
+}
+
+.menuArea__title {
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 20px;
+
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 27px;
+    height: 3px;
+    background: var(--blue);
+  }
+}
+
+.menuArea__linkItem {
+  padding: 5px;
+}
+
+.menuArea__link {
+  color: var(--white);
+  font-weight: lighter;
+}

@@ -1,0 +1,33 @@
+.work {
+  @include desktop {
+    margin: 0 10px;
+    width: 30vw;
+  }
+}
+
+.work__title {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.work__display {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.work__text {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  
+
+  strong {
+    font-weight: bold;
+  }
+} 

@@ -1,0 +1,55 @@
+.contact {
+  background: var(--black);
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+
+.contact__title {
+  left: -50px;
+  top: -100px;
+  transition: top 0.5s 0.5s ease;
+
+  &.is-showed {
+    top: 75px;
+  }
+}
+
+
+.contact__logo {
+  margin-bottom: 30px;
+}
+
+.contact__info {
+  line-height: 150%;
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  li {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.contact__name {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.contact__link {
+  color: white;
+}
+
+.contact__link.mail {
+  font-weight: lighter;
+
+}

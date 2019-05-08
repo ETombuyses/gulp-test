@@ -1,0 +1,38 @@
+.scroll {
+  height: 50px;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid var(--darkblue);
+  position: relative;
+  opacity: 0;
+  animation: visible 1s 1.8s forwards;
+  background: var(--superwhite);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue);
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    animation: scrolldown 1.5s 1s infinite;
+  }
+
+
+  &::before {
+    content: 'scroll down';
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+    // background: red;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+
+  }
+}
