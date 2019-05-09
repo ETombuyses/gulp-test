@@ -4,7 +4,7 @@ const { series } = require('gulp');
 var sass = require('gulp-sass');
 var uglifycss = require('gulp-uglifycss');
 var concat = require('gulp-concat');
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
@@ -22,11 +22,19 @@ function clean(callback) {
   return cache.clearAll(callback)
 }
 
+//realod browser's page
+function reload() {
+  browserSync.reload()
+  done();
+}
+
 //move pages.html files to dist folder
 function html() {
   return gulp.src('src/**/*.html')
   .pipe(gulp.dest('dist'))
 }
+
+
 
 //move the main scss file to dist/css/style.css
 function scss() {
@@ -69,36 +77,49 @@ function fonts () {
   .pipe(gulp.dest('dist/assets'))
 }
 
+//static server
+
+function browser() {
+  browserSync.init({
+    server: {
+      baseDir: "dist"
+    }
+  })
+
+  gulp.watch('src/**/*.scss', series(scss, reload))
+  gulp.watch('src/**/*.js', series(js, reload))
+  gulp.watch('src/**/*.html', series(html, reload))
+  gulp.watch('src/**/*.+(woff|woff2)', series(fonts, reload))
+  gulp.watch('src/**/*.+(png|jpg|gif|svg)', series(images, reload))
+}
+
+
+//watch changes
+
+function watch() {
+  gulp.watch('src/**/*.scss', series(scss, reload))
+  gulp.watch('src/**/*.js', series(js, reload))
+  gulp.watch('src/**/*.html', series(html, reload))
+  gulp.watch('src/**/*.+(woff|woff2)', series(fonts, reload))
+  gulp.watch('src/**/*.+(png|jpg|gif|svg)', series(images, reload))
+}
+
 exports.html = html;
 exports.clean = clean;
 exports.scss = scss;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
-exports.dev = series(clean, html, scss, js, images, fonts);
+exports.watch = watch;
+exports.browser = browser;
+
+
+exports.dev = series(clean, html, scss, js, images, fonts, browser);
 exports.build = series(html, scss, js, images, fonts);
 
-
-
-// // Static server
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: "./dist"
-//         }
-//     });
-
-//     //to watch changes once the server is running
-//     gulp.watch("src/**/*.scss", gulp.series('sass'));
-//     gulp.watch("src/**/*.html").on('change', browserSync.reload);
-
-// });
 
 
 // gulp.task('clean-not-img', function(callback){
 //   del(['dist/**/*', '!dist/images', '!dist/images/**/*'], callback)
 // });
 
-// gulp.task('watch', gulp.series('sass', 'browser-sync'), function () {
-//   gulp.watch('src/**/*.scss', gulp.series('sass')); 
-// });

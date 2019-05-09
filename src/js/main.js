@@ -1,5 +1,7 @@
 /* --------------  Custom cursor ------------------*/
-var CursorPosition = require('./cursor.js');
+// var CursorPosition = require('./cursor.js');
+import CursorPosition from './cursor.js';
+
 
 let cursor = document.querySelector('.cursor');
 let cursorPos = new CursorPosition(cursor);

@@ -48,4 +48,5 @@ class CursorPosition {
   }
 }
 
-module.exports = CursorPosition
+export default CursorPosition;
+// module.exports = CursorPosition
