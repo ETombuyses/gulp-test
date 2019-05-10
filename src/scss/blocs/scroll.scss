@@ -5,8 +5,8 @@
   border: 1px solid var(--darkblue);
   position: relative;
   opacity: 0;
-  animation: visible 1s 1.8s forwards;
   background: var(--superwhite);
+  animation: visible 1s 1.8s forwards;
 
   &::after {
     content: '';
@@ -21,7 +21,6 @@
     animation: scrolldown 1.5s 1s infinite;
   }
 
-
   &::before {
     content: 'scroll down';
     position: absolute;
@@ -29,10 +28,9 @@
     font-size: 12px;
     width: 100px;
     text-align: center;
-    // background: red;
     left: 50%;
-    top: -25px;
+    bottom: -25px;
     transform: translateX(-50%);
-
+    animation: scrolldownMove 0.75s 1s alternate infinite;
   }
 }

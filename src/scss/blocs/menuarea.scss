@@ -13,6 +13,7 @@
     height: 190px;
   }
 }
+
 .menu__clickArea {
   position: absolute;
   width: 40px;
@@ -20,9 +21,12 @@
   right: 10px;
   bottom: 10px;
   z-index: 4;
-  // background: red;
   pointer-events: all;
 
+  @include desktop {
+    left: 20px;
+    bottom: 20px;
+  }
 }
 
 .menu__burger {
@@ -90,7 +94,9 @@
   width: 100vw;
   bottom : -190px;
   text-align: center;
-  background: #333333e1;
+  // background: #333333e1;
+  background: rgba(0, 0, 0, 0.877);
+
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;

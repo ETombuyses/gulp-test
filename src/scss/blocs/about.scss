@@ -1,7 +1,7 @@
 .about {
   background: var(--black);
   color: var(--white);
-  padding: 60px;
+  padding: 40px 60px;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -9,7 +9,6 @@
   @include desktop {
     text-align: center;
   }
-
 }
 
 .about__title {
@@ -19,6 +18,14 @@
 
   &.is-showed {
     top: 85px;
+  }
+
+  @include desktop {
+    transition: transform 0.5s 0.5s ease;
+
+    &.is-showed {
+      transform: translateY(0px);
+    }
   }
 }
 

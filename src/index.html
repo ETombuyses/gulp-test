@@ -10,6 +10,7 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/main.js"></script>
+  <script defer src="js/projects.js"></script>
   <title>Emilie Tombuyses - Front-end developer</title>
 </head>
 
@@ -34,8 +35,11 @@
   <main id="main">
     <div id='cursor' class="cursor"></div>
     <section id="home" class="home">
-      <h1 class="home__title title">Emilie Tombuyses</h1>
-      <h2 id="job" class="home__subtitle">Front-end developer</h2>
+      <h1 class="home__title">Emilie Tombuyses</h1>
+      <h2 id="job" class="home__subtitle subtitle">
+        <span class="subtitle__letters subtitle__letters--front">Front-end</span>
+        <span class="subtitle__letters subtitle__letters--dev">developer</span>
+      </h2>
       <svg width="43" height="55" viewBox="0 0 43 55" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
           <path d="M0 32.6667L-3.75918e-07 24.0667L25.8 24.0667L35.8333 32.6667L0 32.6667Z" fill="#56BAE4" />
@@ -78,48 +82,18 @@
 
     <section id="myworks" class="myworks">
       <h2 class="myworks__title title">My works</h2>
-      <div class="works">
-      <article class="works__work work">
-        <h3 class="work__title">Nespresso</h3>
-         <div class="work__display">
-           <a href=""><img src="assets/images/small/nespresso-redesign.jpg" srcset="assets/images/small/nespresso-redesign.jpg 250w, assets/images/medium/nespresso-redesign.jpg 500w, assets/images/large/nespresso-redesign.jpg 800w"  alt="Nespresso redesign"></a>
-         </div>
-         <div>about</div>
-       <p class="work__text">This project was for my UX course. I had to redesign the homepage of Nespresso.  But I didn’t stop there!</p>
-        <p class="work__text">I really wanted to make this redesign live, so I did.
-          (I am still working on it).</p>
-      </article>
 
-      
-     
-     
-      <article class="works__work work">
-        <h3 class="work__title">Yellow Jacket</h3>
-        <div class="work__display">
-            <a href=""><img src="assets/images/small/yellow-jacket.jpg" srcset="assets/images/small/yellow-jacket.jpg 250w, assets/images/medium/yellow-jacket.jpg 500w, assets/images/large/yellow-jacket.jpg 800w" alt="yellow jacket - JavaScript game"></a>
-          </div>
-        <p class="work__text">Me and my team had 5 days to develop and present a javascript game in front of a jury. It was a great project where I improved my JS skills a lot. It was a lot of fun too!</p>
-        <p class="work__text"><strong>To play in a 1280x800 environment</strong></p>
-      </article>
+      <div id="works" class="works">
 
-      
-
-      <article class="works__work work">
-        <h3 class="work__title">Armani</h3>
-        <div class="work__display">
-          <a href=""><img src="assets/images/small/emporio-armani.jpg" srcset="assets/images/small/emporio-armani.jpg 250w, assets/images/medium/emporio-armani.jpg 500w, assets/images/large/emporio-armani.jpg 800w" alt="emporio armani project"></a>
-        </div>
-        <p class="work__text">This was my first integration after a few weeks of courses, also made in 5 days including the design and a presentation in front of a jury.</p>
-        <p class="work__text"> I integrated the home page and made the responsive part for product pages and the home page.</p>
-      </article>
-<!-- 
-      <article class="works__work work">
+        <!-- <img src="assets/images/medium/armani-montre.png" alt=""> -->
+<!--  
+      <article class="work">
           <h3 class="work__title">Benibla Custom</h3>
           <div class="work__image"></div>
   
         </article>
 
-      <article class="works__work work">
+      <article class="work">
         <h3 class="work__title">So'Comptoir</h3>
         <div class="work__image"></div>
 

@@ -1,0 +1,19 @@
+
+.works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+  @include desktop {
+    max-width: 1200px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 300px;
+      background: linear-gradient(transparent, var(--blue), transparent);
+    }
+  }
+}

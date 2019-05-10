@@ -1,33 +1,138 @@
 .work {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+
   @include desktop {
-    margin: 0 10px;
-    width: 30vw;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 700px;
+  }
+
+  &.is-visible {
+    .work__display {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .work__title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .work__text {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
-.work__title {
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 20px;
+.work--odd {
+  @include desktop {
+    flex-direction: row-reverse;
+  } 
+
+  .work__display {
+    transform: translateX(-500px);
+    
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  .work__description {
+    @include desktop {
+      align-items: flex-start;
+    }
+  }
+
+  .work__text {
+    transform: translateX(500px);
+
+    @include desktop {
+      text-align: start;
+    }
+  }
+
+  .work__title {
+    transform: translate(200px);
+  }
+}
+
+
+
+
+
+.work__filter {
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  transition: opacity 0.7s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &:hover {
+    opacity: 0;
+  }
 }
 
 
 .work__display {
+  overflow: hidden;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(500px);
+  transition: opacity 1s, transform 1s;
 
-  img {
-    width: 100%;
+  @include desktop {
+    width: 47%;
+    justify-content: flex-start;
   }
 }
 
-.work__text {
-  font-size: 14px;
-  margin-top: 20px;
-  text-align: center;
-  
+.work__bigBox {
+  width: 100%;
+  max-width: 300px;
 
-  strong {
-    font-weight: bold;
+  @include desktop {
+    max-width: 400px;
   }
-} 
+}
+
+.work__box {
+  width: 100%;
+  height: 200px;
+  max-width: 300px;
+  background: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @include desktop {
+    height: 300px;
+    max-width: 400px;
+  }
+  
+  img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
+
+.work__tags {
+  color: var(--blue);
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border: 2px solid var(--blue);
+  padding: 5px;
+}
+

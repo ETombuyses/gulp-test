@@ -1,10 +1,9 @@
 .myworks {
   background: var(--white);
-  padding: 60px;
+  padding: 40px 60px;
   position: relative;
   overflow: hidden;
 }
-
 
 .myworks__title {
   left: -65px;
@@ -16,17 +15,12 @@
   }
 
   @include desktop {
+    transition: transform 0.5s 0.5s ease;
     text-align: center;
+
+    &.is-showed {
+      transform: translateY(0px);
+    }
   }
 }
 
-.works {
-  display: flex;
-  flex-direction: column;
-  
-  @include desktop {
-    flex-direction: row;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-}

@@ -12,6 +12,8 @@ var pxtorem = require('gulp-pxtorem');
 var file = require('gulp-file');
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
+const webpack = require('webpack-stream');
+
 // var requirejsOptimize = require('gulp-requirejs-optimize');
 
 

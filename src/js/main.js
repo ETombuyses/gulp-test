@@ -1,38 +1,58 @@
 /* --------------  Custom cursor ------------------*/
-// var CursorPosition = require('./cursor.js');
-import CursorPosition from './cursor.js';
 
+class CursorPosition {
+  constructor(cursor) {
+    this.x = 0;
+    this.y = 0;
+    let lastScrollY = 0;
+
+    document.addEventListener('mousemove', event => {
+      this.x = event.pageX;
+      this.y = event.pageY;
+      cursor.style.left = this.x + 'px';
+      cursor.style.top = this.y + 'px';
+    })
+
+    window.addEventListener('scroll', () => {
+      let currentScrollY = window.scrollY;
+      let deltaScrollY = currentScrollY - lastScrollY;
+      this.y = this.y + deltaScrollY;
+      cursor.style.top = this.y + 'px';
+      lastScrollY = currentScrollY;
+    })
+
+    document.addEventListener('mouseover', () => {
+      if (window.innerWidth > 800) {
+        cursor.style.display='block';
+      }
+    })
+
+    document.addEventListener('mouseout', () => {
+      cursor.style.display='none';
+    })
+
+    const darkSections = document.querySelectorAll("[data-color='dark']")
+    darkSections.forEach(darkSection => {
+      darkSection.addEventListener('mouseover', () => {
+        cursor.classList.add('is-white');
+      });
+
+      darkSection.addEventListener('mouseout', () => {
+        cursor.classList.remove('is-white');
+      });
+    });
+  }
+}
+// var CursorPosition = require('./cursor.js');
 
 let cursor = document.querySelector('.cursor');
 let cursorPos = new CursorPosition(cursor);
 
-/* --------------  split h2 homepage on desktop ------------------*/
 
-if (window.innerWidth > 800) {
-  
-  let jobTitle = document.getElementById('job');
-  let words = jobTitle.textContent.split(' ');
+/* --------------  force page position top after page reload ------------------*/
 
-  jobTitle.innerHTML = '';
-  
-  let spanFistWord = document.createElement('span');
-  spanFistWord.innerHTML = words[0];
-  jobTitle.appendChild(spanFistWord);
-  spanFistWord.classList.add('front');
-
-  setTimeout( () => {
-    spanFistWord.classList.add('is-showed');
-  }, 600)
-
-  let spanSecWord = document.createElement('span');
-  spanSecWord.innerHTML = words[1];
-  jobTitle.appendChild(spanSecWord);
-  spanSecWord.classList.add('dev');
-
-  setTimeout( () => {
-    spanSecWord.classList.add('is-showed');
-  }, 600)
-
+window.onbeforeunload = function() { 
+  window.scrollTo(0,0); 
 }
 
 
@@ -94,24 +114,31 @@ for (let i=0; i < darkSections.length; i++) {
 /* ------------- title animation on scroll -------------- */
 
 const titles = document.querySelectorAll('.title');
+let mainTitle = document.querySelector('.home__title');
+
 
 const showTitle = title => {
   const offsetTop = title.parentNode.offsetTop;
   let currentScroll = window.scrollY + window.innerHeight;
 
-  if (currentScroll > offsetTop + 100) {
+  if (currentScroll > offsetTop + 20) {
     title.classList.add('is-showed');
   }
 }
 
-for (let i=0; i < titles.length; i++) {
-  
-  showTitle(titles[i]);
+const showTitleOnResize = title => {
+  showTitle(title);
   
   document.addEventListener('scroll', () => {
-    showTitle(titles[i]);
+    showTitle(title);
   });
 }
+
+for (let i=0; i < titles.length; i++) {
+  showTitleOnResize(titles[i]);
+}
+showTitleOnResize(mainTitle);
+
 
 /* ------------- Flipcard on mouseover and click -------------- */
 

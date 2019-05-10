@@ -8,7 +8,7 @@
 
   @include desktop {
     position: static;
-    transform: rotate(0deg);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    transform: translateY(-300px);
   }
 }
