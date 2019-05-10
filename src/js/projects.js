@@ -166,14 +166,6 @@ const lineGrows = project => {
   }
 }
 
-// const showProjectOnResize = project => {
-//   showProject(project);
-  
-//   document.addEventListener('scroll', () => {
-//     showProject(project);
-//   });
-// }
-
 window.addEventListener('scroll', () => {
   lineGrows(myProject);
 })

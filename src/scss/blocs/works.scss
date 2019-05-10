@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin: 0 auto;
   
   @include desktop {
     max-width: 1200px;
@@ -15,7 +16,6 @@
     position: absolute;
     width: 3px;
     height: 300px;
-    // background: linear-gradient(transparent, var(--blue), transparent);
-    background: var(--blue);
+    background: linear-gradient(transparent, var(--blue), transparent);
   }
 }
