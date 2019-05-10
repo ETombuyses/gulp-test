@@ -146,11 +146,34 @@ for (let i=0; i < myProjects.length; i++) {
   showProjectOnResize(myProjects[i]);
 }
 
+/* ------------- project line animation on scroll -------------- */
 
 
+const myProject = document.querySelector('.work');
+let line = document.getElementById('line');
+const offsetScreen = myProject.getBoundingClientRect().top  + (window.innerHeight/2) + 150;
 
-// window.addEventListener('scroll', () => {
-//   let test = document.querySelector('.work');
-//   let dist = test.getBoundingClientRect().top  - window.innerHeight;
-//   console.log(dist);
-// })
+
+// translate line on scroll on project section
+const lineGrows = project => {
+
+  // distance between element and top of page + half the screen height
+  let pageScroll = window.scrollY + window.innerHeight;
+  let lineTranslateY = offsetScreen - pageScroll;
+  if( lineTranslateY < 0) {
+    line.style.transform = `translateY(${Math.abs(lineTranslateY)}px)`;
+    console.log(Math.abs(lineTranslateY));
+  }
+}
+
+// const showProjectOnResize = project => {
+//   showProject(project);
+  
+//   document.addEventListener('scroll', () => {
+//     showProject(project);
+//   });
+// }
+
+window.addEventListener('scroll', () => {
+  lineGrows(myProject);
+})
