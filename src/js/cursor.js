@@ -1,6 +1,3 @@
-// //issue : mouseenter and mouseleave not triggered in firefox and safari
-// //fix: mouseover and mouseout are working fine
-
 // class CursorPosition {
 //   constructor(cursor) {
 //     this.x = 0;
@@ -42,9 +39,6 @@
 //         cursor.classList.remove('is-white');
 //       });
 //     });
-
-    
-
 //   }
 // }
 

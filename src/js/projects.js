@@ -3,46 +3,85 @@ let projects = [
   {
     title: "Tower of Hanoi",
     descriptions: [
-      "A well known mathematical game that I coded.",
+      "A well-known puzzle that I coded in JavaScript.",
       "The rules are explained on the game's page.",
-      "Have fun playing it !"
+      "Have fun playing it!"
     ],
     link : "https://tower-of-hanoi.netlify.com/",
-    image: "assets/images/medium/hanoi.svg",
+    images: {
+      svg: true,
+      default: "assets/images/svg/hanoi.svg"
+    },
     alt: "tower of Hanoi",
     cta: "Game"
   },
   {
     title: "Nespresso redesign",
     descriptions: [
-      "This project was for my UX course. I had to redesign the homepage of Nespresso. But I didn’t stop there!",
-      "I really wanted to make this redesign live, so I did. (I am still working on it)."
+      "This project was for my UX course. I had to redesign the homepage of Nespresso to make it look more luxury. But I didn’t stop there!",
+      "I really wanted to make this redesign live, so I did. The page is not finished yet, but I will work on it soon!",
+      "I had not a lot of experience at that time but it helped me improve my skills."
     ],
     link : "https://nespresso-redesign-school-project.netlify.com/",
-    image: "assets/images/large/tasse.png",
-    alt: "nespresso redesign",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/nespresso.png",
+      mobile: {
+        image: "assets/images/mobile/nespresso.png",
+        width: "250"
+      },
+      desktop: {
+        image: "assets/images/desktop/nespresso.png",
+        width: "300"
+      },
+      retina: {
+        image: "assets/images/retina/nespresso.png",
+        width: "510"
+      }
+    },
+    alt: "nespresso coffee",
     cta: "website"
   },
   {
     title: "Yellow Jacket",
     descriptions: [
-      "Me and my team had 5 days to develop and present a javascript game in front of a jury. It was a great project where I improved my JS skills a lot. It was a lot of fun too!",
+      "Me and my team (5 persons) had 4 days to think of a game, design it and develop it in JavaScript based on a library.",
+      "It was my first big JavaScript project which helped me to understand how JavaScript works. It was a lot of fun!",
       "<strong>To play in a 1280x800 environment</strong>"
     ],
     link : "https://yellowjacketgame.netlify.com/",
-    image: "assets/images/medium/yellow-jacket.png",
-    alt: "javascript game - yellow jacket",
+    images: {
+      svg: true,
+      default: "assets/images/svg/yellow-jacket.svg"
+    },
+    alt: "yellow jacket",
     cta: "game"
   },
   {
     title: "Emporio Armani",
     descriptions: [
-      "This was my first integration after a few weeks of courses, also made in 5 days including the design and a presentation in front of a jury.",
+      "This was my first website integration after a few weeks of courses. This project was also made in 4 days with a 5 persons team.",
+      "The first day, we had to play the role of a client for another team. We gave them our wireframes accompanied by our specification. The following days, we designed and integrated our client team's website.",      
       "I integrated the home page and made the responsive part for product pages and the home page."
     ],
     link : "https://armani-soufre.netlify.com/",
-    image: "assets/images/medium/armani-montre.png",
-    alt: "emporio armani integration",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/emporio-armani.png",
+      mobile: {
+        image: "assets/images/mobile/emporio-armani.png",
+        width: "130"
+      },
+      desktop: {
+        image: "assets/images/desktop/emporio-armani.png",
+        width: "216"
+      },
+      retina: {
+        image: "assets/images/retina/emporio-armani.png",
+        width: "389"
+      }
+    },
+    alt: "emporio armani watch",
     cta: "website"
   }
 ];
@@ -54,7 +93,7 @@ let fragment = document.createDocumentFragment();
 const displayWorks = () => {
   for (let i = 0; i < projects.length; i++) {
 
-    //article
+    /*article*/
     let work = document.createElement('article');
     work.classList.add('work');
 
@@ -93,22 +132,32 @@ const displayWorks = () => {
     link.target = "_blank";
     link.rel = "noopener noreferrer nofollow external";
 
-    link.innerHTML= `
-    <div class="work__box">
-      <div class="work__filter">
-        <span class="work__tags">${projects[i].cta}</span>
-      </div>
-      <img src=${projects[i].image} alt="${projects[i].alt}">
-    </div>`;
+    if (projects[i].images.svg) {
+      link.innerHTML= `
+      <div class="work__box">
+        <div class="work__filter">
+          <span class="work__tags">${projects[i].cta}</span>
+        </div>
+        <img src=${projects[i].images.default} alt="${projects[i].alt}">
+      </div>`;
 
+    } else {
+      link.innerHTML= `
+      <div class="work__box">
+        <div class="work__filter">
+          <span class="work__tags">${projects[i].cta}</span>
+        </div>
+        <img src=${projects[i].images.default} srcset="${projects[i].images.mobile.image} ${projects[i].images.mobile.width}w, ${projects[i].images.desktop.image} ${projects[i].images.desktop.width}w, ${projects[i].images.retina.image} ${projects[i].images.retina.width}w"
+        sizes="(max-width: 799px) 210px, 280px"
+        alt="${projects[i].alt}">
+      </div>`;
+    }
+    
     display.appendChild(link);
-
-
 
     /*combine sections*/
     work.appendChild(description);
     work.appendChild(display);
-
 
     // add to fragment
     fragment.appendChild(work);
@@ -126,7 +175,6 @@ const myProjects = document.querySelectorAll('.work');
 // add a class when a project becomes visible on screen
 const showProject = project => {
 
-  // distance between element and top of page
   const offsetScreen = project.getBoundingClientRect().top  - window.innerHeight + 100;
 
   if (offsetScreen <= 0) {
@@ -155,17 +203,16 @@ const offsetScreen = myProject.getBoundingClientRect().top  + (window.innerHeigh
 
 
 // translate line on scroll on project section
-const lineGrows = project => {
+const lineGrows = () => {
 
-  // distance between element and top of page + half the screen height
   let pageScroll = window.scrollY + window.innerHeight;
   let lineTranslateY = offsetScreen - pageScroll;
   if( lineTranslateY < 0) {
     line.style.transform = `translateY(${Math.abs(lineTranslateY)}px)`;
-    console.log(Math.abs(lineTranslateY));
+    // line.style.height = `${Math.abs(lineTranslateY) + 300}px`;
   }
 }
 
 window.addEventListener('scroll', () => {
-  lineGrows(myProject);
+  lineGrows();
 })

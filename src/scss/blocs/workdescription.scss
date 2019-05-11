@@ -13,6 +13,7 @@
 .work__title {
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
   margin-bottom: 20px;
   transform: translate(-200px);
   opacity: 0;
@@ -29,9 +30,14 @@
   opacity: 0;
   transition: opacity 1.5s, transform 1.3s;
 
+  &:first-of-type {
+    margin-top: 0px;
+  }
+
   @include desktop {
     display: block;
     text-align: end;
+    min-width: 350px;
   }
 
   strong {

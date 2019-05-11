@@ -43,7 +43,6 @@ class CursorPosition {
     });
   }
 }
-// var CursorPosition = require('./cursor.js');
 
 let cursor = document.querySelector('.cursor');
 let cursorPos = new CursorPosition(cursor);
@@ -54,7 +53,6 @@ let cursorPos = new CursorPosition(cursor);
 window.onbeforeunload = function() { 
   window.scrollTo(0,0); 
 }
-
 
 /* --------------  Menu opening ------------------*/
 
@@ -77,7 +75,7 @@ main.addEventListener('click', () => {
 
 })
 
-/* ------------- Menu color -------------- */
+/* ------------- Menu color change -------------- */
 
 const darkSections = document.querySelectorAll("[data-color='dark']");
 
@@ -97,7 +95,6 @@ const menuColorChange = section => {
     menuBurger.classList.toggle('is-white-top', currentScroll > offsetTop + 45 && currentScroll < offsetTop + 45 + height);
   }
 }
-
 
 for (let i=0; i < darkSections.length; i++) {
   document.addEventListener('scroll', () => {
@@ -142,10 +139,6 @@ showTitleOnResize(mainTitle);
 
 /* ------------- Flipcard on mouseover and click -------------- */
 
-// to fix : not allow click for mouse devices ? 
-
-
-
 const flipcard = document.getElementById('flipcard');
 const flipcardInner = flipcard.querySelector('.flipcard__inner');
 
@@ -163,6 +156,3 @@ setTimeout( () => {
     flipcardInner.classList.toggle('to-back');
   });
 }, 3000);
-
-
-

@@ -1,4 +1,3 @@
-//to make sure we have the gulp module in order to run series and parallel functions
 var gulp = require('gulp');
 const { series } = require('gulp');
 var sass = require('gulp-sass');
@@ -8,14 +7,13 @@ var browserSync = require('browser-sync').create();
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
-var pxtorem = require('gulp-pxtorem');
-var file = require('gulp-file');
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
-const webpack = require('webpack-stream');
+var autoprefixer = require('gulp-autoprefixer');
+var postcss = require('gulp-postcss');
+var pxtorem = require('gulp-pxtorem');
 
 // var requirejsOptimize = require('gulp-requirejs-optimize');
-
 
 
 //delete dist folder 
@@ -37,13 +35,53 @@ function html() {
 }
 
 
-
 //move the main scss file to dist/css/style.css
 function scss() {
+
+  var opts = {
+    propWhiteList: [
+      'font-size',
+      'margin',
+      'padding',
+      'border',
+      'width',
+      'height',
+      'transform',
+      'min-width',
+      'top',
+      'left',
+      'bottom',
+      'right',
+      'padding-top',
+      'padding-bottom',
+      'padding-left',
+      'padding-right',
+      'margin-top',
+      'margin-left',
+      'margin-right',
+      'margin-bottom',
+      'min-width',
+      'min-heigth',
+      'max-width',
+      'max-height',
+      'perspective',
+      'border-radius',
+      'border',
+      'border-right',
+      'border-left',
+      'border-bottom',
+      'border-top',
+      'letter-spacing'
+    ] 
+  };
   return gulp.src('src/scss/*.scss')
   .pipe(concat('style.css'))
-  .pipe(pxtorem())
   .pipe(sass().on('error', sass.logError))
+  .pipe(pxtorem(opts))
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
   .pipe(uglifycss({
     "uglyComments": false
   }))
@@ -52,14 +90,11 @@ function scss() {
 
 //move js files to dist/js
 function js() {
-  return gulp.src('src/js/*.js')
+  return gulp.src(['src/js/*.js', '!src/js/cursor.js'])
   .pipe(babel({
     presets: ['@babel/env']
   }))
-  // .pipe(requirejsOptimize({
-  //   optimize: 'none',
-  // }))                               
-  // .pipe(uglify())              //doesn't minify JS correctly (doesn't support classes ?)
+  .pipe(uglify())
   .pipe(gulp.dest('dist/js'))
 }
 
@@ -80,7 +115,6 @@ function fonts () {
 }
 
 //static server
-
 function browser() {
   browserSync.init({
     server: {
@@ -106,22 +140,8 @@ function watch() {
   gulp.watch('src/**/*.+(png|jpg|gif|svg)', series(images, reload))
 }
 
-exports.html = html;
-exports.clean = clean;
-exports.scss = scss;
-exports.js = js;
-exports.images = images;
-exports.fonts = fonts;
-exports.watch = watch;
-exports.browser = browser;
 
+exports.clean = clean;
 
 exports.dev = series(clean, html, scss, js, images, fonts, browser);
 exports.build = series(html, scss, js, images, fonts);
-
-
-
-// gulp.task('clean-not-img', function(callback){
-//   del(['dist/**/*', '!dist/images', '!dist/images/**/*'], callback)
-// });
-
