@@ -138,7 +138,7 @@ const displayWorks = () => {
         <div class="work__filter">
           <span class="work__tags">${projects[i].cta}</span>
         </div>
-        <img src=${projects[i].images.default} alt="${projects[i].alt}">
+        <img data-src=${projects[i].images.default} alt="${projects[i].alt}">
       </div>`;
 
     } else {
@@ -147,7 +147,7 @@ const displayWorks = () => {
         <div class="work__filter">
           <span class="work__tags">${projects[i].cta}</span>
         </div>
-        <img src=${projects[i].images.default} srcset="${projects[i].images.mobile.image} ${projects[i].images.mobile.width}w, ${projects[i].images.desktop.image} ${projects[i].images.desktop.width}w, ${projects[i].images.retina.image} ${projects[i].images.retina.width}w"
+        <img data-src=${projects[i].images.default} data-srcset="${projects[i].images.mobile.image} ${projects[i].images.mobile.width}w, ${projects[i].images.desktop.image} ${projects[i].images.desktop.width}w, ${projects[i].images.retina.image} ${projects[i].images.retina.width}w"
         sizes="(max-width: 799px) 210px, 280px"
         alt="${projects[i].alt}">
       </div>`;

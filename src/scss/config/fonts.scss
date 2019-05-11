@@ -14,5 +14,5 @@
 @include fontface ("Montserrat", "../assets/fonts/montserrat/montserrat-regular-webfont.woff2", "../assets/fonts/montserrat/montserrat-regular-webfont.woff", normal, normal);
 
 body {
-  font-family: "Montserrat";
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
