@@ -214,5 +214,7 @@ const lineGrows = () => {
 }
 
 window.addEventListener('scroll', () => {
-  lineGrows();
+  if(window.innerWidth >= 800) {
+    lineGrows();
+  }
 })
