@@ -10,9 +10,9 @@
   position: relative;
 }
 
-@supports (-ms-accelerator: true) { /* Edge only */
+@supports (-ms-flow-from: thingy) { /* Edge only */
   .home {
-      justify-content: space-around;
+    justify-content: space-around;
   }
 }
 
