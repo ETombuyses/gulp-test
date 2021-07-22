@@ -1,6 +1,6 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
 const { series } = require('gulp');
-var sass = require('gulp-sass');
 var uglifycss = require('gulp-uglifycss');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
@@ -12,7 +12,6 @@ var babel = require('gulp-babel');
 var autoprefixer = require('gulp-autoprefixer');
 var postcss = require('gulp-postcss');
 var pxtorem = require('gulp-pxtorem');
-
 // var requirejsOptimize = require('gulp-requirejs-optimize');
 
 
