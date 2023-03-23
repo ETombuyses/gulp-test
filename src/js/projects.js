@@ -67,7 +67,7 @@ let projects = [
       svg: false,
       default: "assets/images/desktop/agora.jpg",
       mobile: {
-        image: "assets/images/desktop/agora.jpg",
+        image: "assets/images/mobile/agora.jpg",
         width: "250"
       },
       desktop: {
@@ -75,7 +75,7 @@ let projects = [
         width: "300"
       },
       retina: {
-        image: "assets/images/desktop/agora.jpg",
+        image: "assets/images/retina/agora.jpg",
         width: "560"
       }
     },
@@ -95,7 +95,7 @@ let projects = [
       svg: false,
       default: "assets/images/desktop/dharma.jpg",
       mobile: {
-        image: "assets/images/desktop/dharma.jpg",
+        image: "assets/images/mobile/dharma.jpg",
         width: "250"
       },
       desktop: {
@@ -103,7 +103,7 @@ let projects = [
         width: "300"
       },
       retina: {
-        image: "assets/images/desktop/dharma.jpg",
+        image: "assets/images/retina/dharma.jpg",
         width: "560"
       }
     },
