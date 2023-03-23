@@ -1,11 +1,11 @@
 .scroll {
+  position: absolute;
+  bottom: 80px;
   height: 50px;
   width: 30px;
   border-radius: 30px;
-  border: 1px solid var(--darkblue);
-  position: relative;
+  border: 2px solid var(--darkblue);
   opacity: 0;
-  background: var(--superwhite);
   animation: visible 1s 1.8s forwards;
 
   &::after {
@@ -22,7 +22,7 @@
   }
 
   &::before {
-    content: 'scroll down';
+    content: 'scroll !';
     position: absolute;
     text-transform: uppercase;
     font-size: 12px;

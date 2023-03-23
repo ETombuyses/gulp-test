@@ -1,18 +1,20 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 const { series } = require('gulp');
-var uglifycss = require('gulp-uglifycss');
-var concat = require('gulp-concat');
-var browserSync = require('browser-sync').create();
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
-var del = require('del');
-var uglify = require('gulp-uglify');
-var babel = require('gulp-babel');
-var autoprefixer = require('gulp-autoprefixer');
-var postcss = require('gulp-postcss');
-var pxtorem = require('gulp-pxtorem');
-// var requirejsOptimize = require('gulp-requirejs-optimize');
+const uglifycss = require('gulp-uglifycss');
+const concat = require('gulp-concat');
+const browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
+const del = require('del');
+const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const pxtorem = require('gulp-pxtorem');
+const strip = require('gulp-strip-comments');
+
+// const requirejsOptimize = require('gulp-requirejs-optimize');
 
 
 //delete dist folder 
@@ -30,6 +32,7 @@ function reload() {
 //move pages.html files to dist folder
 function html() {
   return gulp.src('src/**/*.html')
+  .pipe(strip())
   .pipe(gulp.dest('dist'))
 }
 
@@ -37,7 +40,7 @@ function html() {
 //move the main scss file to dist/css/style.css
 function scss() {
 
-  var opts = {
+  const opts = {
     propWhiteList: [
       'font-size',
       'margin',
@@ -99,7 +102,7 @@ function js() {
 
 //move images to dist folder
 function images() {
-  return gulp.src('src/assets/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('src/assets/**/*.+(png|jpg|gif|svg|pdf)')
   .pipe(cache(imagemin({
     interlaced: true
   })))
@@ -125,7 +128,7 @@ function browser() {
   gulp.watch('src/**/*.js', series(js, reload))
   gulp.watch('src/**/*.html', series(html, reload))
   gulp.watch('src/**/*.+(woff|woff2)', series(fonts, reload))
-  gulp.watch('src/**/*.+(png|jpg|gif|svg)', series(images, reload))
+  gulp.watch('src/**/*.+(png|jpg|gif|svg|pdf)', series(images, reload))
 }
 
 
@@ -136,7 +139,7 @@ function watch() {
   gulp.watch('src/**/*.js', series(js, reload))
   gulp.watch('src/**/*.html', series(html, reload))
   gulp.watch('src/**/*.+(woff|woff2)', series(fonts, reload))
-  gulp.watch('src/**/*.+(png|jpg|gif|svg)', series(images, reload))
+  gulp.watch('src/**/*.+(png|jpg|gif|svg|pdf)', series(images, reload))
 }
 
 

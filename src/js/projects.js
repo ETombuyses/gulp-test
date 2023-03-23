@@ -1,28 +1,138 @@
 
 let projects = [
   {
-    title: "Tower of Hanoi",
+    title: "OWNEST - Application Owalt (Vue3, Cordova)",
     descriptions: [
-      "A well-known puzzle that I coded in JavaScript.",
-      "The rules are explained on the game's page.",
-      "Have fun playing it!"
+      `Participation à la création from scratch d'une web app en Vue3 et Cordova en tant que développeuse front pour l'entreprise Ownest.`,
+      "L'application permet la réception et le transfert d'actifs numériques via un simple numéro de téléphone",
+      `Disponible en application native sur <a href="https://play.google.com/store/apps/details?id=com.ownest.owalt" target="_blank">Play store</a> et <a href="https://apps.apple.com/gb/app/owalt/id1632435343" target="_blank">App Store</a>`
     ],
-    link : "https://tower-of-hanoi.netlify.com/",
+    link: "https://app.owalt.io",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/owalt.png",
+      mobile: {
+        image: "assets/images/mobile/owalt.png",
+        width: "210"
+      },
+      desktop: {
+        image: "assets/images/desktop/owalt.png",
+        width: "210"
+      },
+      retina: {
+        image: "assets/images/retina/owalt.png",
+        width: "250"
+      }
+    },
+    alt: "Application Owalt",
+    cta: "App"
+  },
+  {
+    title: "OWNEST - PWA Ownest (Vue2)",
+    descriptions: [
+      `Maintien et développement de nouvelles fonctionnalités pour une PWA existante en Vue2.`,
+      "Cette application B2B permet la traçabilité de biens sur les reseaux logistiques des entreprises grâce à des mécanismes blockchain.",
+      "Par souci de confidentialité, je ne rajoute ici que le lien vers le site de l'entreprise Ownest au cas où vous souhaiteriez en savoir plus."
+    ],
+    link: "https://ownest.io/",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/ownest.png",
+      mobile: {
+        image: "assets/images/mobile/ownest.png",
+        width: "210"
+      },
+      desktop: {
+        image: "assets/images/desktop/ownest.png",
+        width: "210"
+      },
+      retina: {
+        image: "assets/images/retina/ownest.png",
+        width: "250"
+      }
+    },
+    alt: "Application Ownest",
+    cta: "App"
+  },
+  {
+    title: "3e HETIC - Agora (React)",
+    descriptions: [
+      `Projet scolaire (fictif) autour de l'écologie en React.`,
+      "Agora est une plateforme en ligne en collaboration avec le gouvernement abordant le thème de l'écologie. Elle se veut accessible à tous les citoyens français souhaitant contribuer à l'amélioration de l'environnement par des missions mensuelles à remplir sur notre plateforme.",
+      "Il s'agit plus exactement d'un dashboard résumant la consommation de ressources de chaque citoyen.",
+      "<strong>A faire tourner en local en Node 14</strong>"
+    ],
+    link: "https://github.com/ETombuyses/agora",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/agora.jpg",
+      mobile: {
+        image: "assets/images/desktop/agora.jpg",
+        width: "250"
+      },
+      desktop: {
+        image: "assets/images/desktop/agora.jpg",
+        width: "300"
+      },
+      retina: {
+        image: "assets/images/desktop/agora.jpg",
+        width: "560"
+      }
+    },
+    alt: "Agora",
+    cta: "Github"
+  },
+  {
+    title: "1e HETIC - Dharma (Vue2)",
+    descriptions: [
+      `Mon premier jeu en Vue.js. Il s'agit ici d'un "jeu dont vous êtes le héro".`,
+      "Chaque choix influe sur la fin (plus ou moins rapide, plus ou moins tragique) de l'histoire.",
+      "Je me suis occupée de la partie fonctionnelle du jeu tandis que ma coéquipière s'est occupée de l'aspect histoire et design.",
+      "En espérant que vous survivrez au voyage."
+    ],
+    link: "https://dharma.netlify.app",
+    images: {
+      svg: false,
+      default: "assets/images/desktop/dharma.jpg",
+      mobile: {
+        image: "assets/images/desktop/dharma.jpg",
+        width: "250"
+      },
+      desktop: {
+        image: "assets/images/desktop/dharma.jpg",
+        width: "300"
+      },
+      retina: {
+        image: "assets/images/desktop/dharma.jpg",
+        width: "560"
+      }
+    },
+    alt: "Jeu Dharma",
+    cta: "Jeu"
+  },
+  {
+    title: "1e HETIC - Tour d'Hanoï (JS, HTML, CSS)",
+    descriptions: [
+      "Un casse tête très connu codé en JavaScript.",
+      "Les règles sont expliquées sur la page du jeu.",
+      "Bon amusement!"
+    ],
+    link: "https://tower-of-hanoi.netlify.com/",
     images: {
       svg: true,
       default: "assets/images/svg/hanoi.svg"
     },
-    alt: "tower of Hanoi",
-    cta: "Game"
+    alt: "Tour d'Hanoï",
+    cta: "Jeu"
   },
   {
-    title: "Nespresso redesign",
+    title: "1e HETIC - Nespresso redesign (HTML, CSS)",
     descriptions: [
-      "This project was for my UX course. I had to redesign the homepage of Nespresso to make it look more luxury. But I didn’t stop there!",
-      "I really wanted to make this redesign live, so I did. The page is not finished yet, but I will work on it soon!",
-      "I had not a lot of experience at that time but it helped me improve my skills."
+      "Ce projet était à l'origine pour mon cours de design. Je devais revisiter la page d'accueil de Nespresso pour lui donner un look plus luxueux.",
+      "Fière du résultat des maquettes, il me tenaît à coeur de les intégrer. C'était également l'occasion de m'entraîner sur un projet perso.",
+      "<strong>Note: Le site n'est pas (et ne se veut pas) fonctionnel.</strong>"
     ],
-    link : "https://nespresso-redesign-school-project.netlify.com/",
+    link: "https://nespresso-redesign-school-project.netlify.com/",
     images: {
       svg: false,
       default: "assets/images/desktop/nespresso.png",
@@ -39,32 +149,32 @@ let projects = [
         width: "510"
       }
     },
-    alt: "nespresso coffee",
-    cta: "website"
+    alt: "Café Nespresso",
+    cta: "Site"
   },
   {
-    title: "Yellow Jacket",
+    title: "1e HETIC - Yellow Jacket (JS, HTML, CSS)",
     descriptions: [
-      "Me and my team (5 persons) had 4 days to think of a game, design it and develop it in JavaScript based on a library.",
-      "It was my first big JavaScript project which helped me to understand how JavaScript works. It was a lot of fun!",
-      "<strong>To play in a 1280x800 environment</strong>"
+      "Mon équipe et moi avions 4 jours pour concevoir un jeu en JavaScript basé sur une librairie fournie à cet effet.",
+      "Ce fut mon premier projet JavaScript.",
+      "<strong>Nécessite de jouer en 1280x800</strong>"
     ],
-    link : "https://yellowjacketgame.netlify.com/",
+    link: "https://yellowjacketgame.netlify.com/",
     images: {
       svg: true,
       default: "assets/images/svg/yellow-jacket.svg"
     },
-    alt: "yellow jacket",
-    cta: "game"
+    alt: "Yellow jacket",
+    cta: "Jeu"
   },
   {
-    title: "Emporio Armani",
+    title: "1e HETIC - Emporio Armani (HTML, CSS)",
     descriptions: [
-      "This was my first website integration after a few weeks of courses. This project was also made in 4 days with a 5 persons team.",
-      "The first day, we had to play the role of a client for another team. We gave them our wireframes accompanied by our specification. The following days, we designed and integrated our client team's website.",      
-      "I integrated the home page and made the responsive part for product pages and the home page."
+      "Voici mon premier projet d'intégration de site après une semaine de cours. Il a été réalisé en équipe en 4 jours seulement.",
+      "Le premier jour, nous devions jouer le rôle d'un client pour une autre équipe en leur remettant les wireframes attendus ainsi que nos spécifications. Les jours suivant étaient consacrés au design et à l'intégration du site de notre propre client",
+      "Je me suis occupée de la page d'accueil ainsi que la partie responsive des pages produit."
     ],
-    link : "https://armani-soufre.netlify.com/",
+    link: "https://armani-soufre.netlify.com/",
     images: {
       svg: false,
       default: "assets/images/desktop/emporio-armani.png",
@@ -81,8 +191,8 @@ let projects = [
         width: "389"
       }
     },
-    alt: "emporio armani watch",
-    cta: "website"
+    alt: "Montre Emporio Armani",
+    cta: "Site"
   }
 ];
 
@@ -97,7 +207,7 @@ const displayWorks = () => {
     let work = document.createElement('article');
     work.classList.add('work');
 
-    if(i%2 == 0) {
+    if (i % 2 == 0) {
       work.classList.add('work--odd');
     }
 
@@ -124,7 +234,7 @@ const displayWorks = () => {
     /*section display*/
     let display = document.createElement('section');
     display.classList.add('work__display');
-    
+
     //link 
     let link = document.createElement('a');
     link.classList.add('work__bigBox');
@@ -133,7 +243,7 @@ const displayWorks = () => {
     link.rel = "noopener noreferrer nofollow external";
 
     if (projects[i].images.svg) {
-      link.innerHTML= `
+      link.innerHTML = `
       <div class="work__box">
         <div class="work__filter">
           <span class="work__tags">${projects[i].cta}</span>
@@ -142,7 +252,7 @@ const displayWorks = () => {
       </div>`;
 
     } else {
-      link.innerHTML= `
+      link.innerHTML = `
       <div class="work__box">
         <div class="work__filter">
           <span class="work__tags">${projects[i].cta}</span>
@@ -152,7 +262,7 @@ const displayWorks = () => {
         alt="${projects[i].alt}">
       </div>`;
     }
-    
+
     display.appendChild(link);
 
     /*combine sections*/
@@ -175,7 +285,7 @@ const myProjects = document.querySelectorAll('.work');
 // add a class when a project becomes visible on screen
 const showProject = project => {
 
-  const offsetScreen = project.getBoundingClientRect().top  - window.innerHeight + 100;
+  const offsetScreen = project.getBoundingClientRect().top - window.innerHeight + 100;
 
   if (offsetScreen <= 0) {
     project.classList.add('is-visible');
@@ -184,13 +294,13 @@ const showProject = project => {
 
 const showProjectOnResize = project => {
   showProject(project);
-  
+
   document.addEventListener('scroll', () => {
     showProject(project);
   });
 }
 
-for (let i=0; i < myProjects.length; i++) {
+for (let i = 0; i < myProjects.length; i++) {
   showProjectOnResize(myProjects[i]);
 }
 
@@ -199,7 +309,7 @@ for (let i=0; i < myProjects.length; i++) {
 
 const myProject = document.querySelector('.work');
 let line = document.getElementById('line');
-const offsetScreen = myProject.getBoundingClientRect().top  + (window.innerHeight/2) + 150;
+const offsetScreen = myProject.getBoundingClientRect().top + (window.innerHeight / 2) + 150;
 
 
 // translate line on scroll on project section
@@ -207,14 +317,14 @@ const lineGrows = () => {
 
   let pageScroll = window.scrollY + window.innerHeight;
   let lineTranslateY = offsetScreen - pageScroll;
-  if( lineTranslateY < 0) {
+  if (lineTranslateY < 0) {
     line.style.transform = `translateY(${Math.abs(lineTranslateY)}px)`;
     // line.style.height = `${Math.abs(lineTranslateY) + 300}px`;
   }
 }
 
 window.addEventListener('scroll', () => {
-  if(window.innerWidth >= 800) {
+  if (window.innerWidth >= 800) {
     lineGrows();
   }
 })

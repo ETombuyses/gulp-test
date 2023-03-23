@@ -14,8 +14,10 @@
 .works__line {  
   @include desktop {
     position: absolute;
-    width: 3px;
+    // width: 3px;
+    width: 2px;
     height: 300px;
-    background: linear-gradient(transparent, var(--blue), transparent);
+    // background: linear-gradient(transparent, var(--blue), transparent);
+    background: var(--blue);
   }
 }
