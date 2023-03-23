@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140004172-1"></script>
-  <script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140004172-1"></script> -->
+  <!-- <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-140004172-1');
-  </script>
+  </script> -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" content="Emilie Tombuyses">
-  <meta name="description" content="Portfolio of Emilie Tombuyses, a front-end developer in Paris">
+  <meta name="description" content="Portfolio d'Emilie Tombuyses, développeuse front-end à Paris">
   <meta itemprop="image" content="https://www.emilietombuyses.com/assets/images/site-preview.jpg">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://www.emilietombuyses.com">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Emilie Tombuyses - Front-end developer">
-  <meta property="og:description" content="Portfolio of Emilie Tombuyses, a front-end developer in Paris">
+  <meta property="og:description" content="Portfolio d'Emilie Tombuyses, développeuse front-end à Paris">
   <meta property="og:image" content="https://www.emilietombuyses.com/assets/images/site-preview.jpg">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Emilie Tombuyses - Front-end developer">
-  <meta name="twitter:description" content="Portfolio of Emilie Tombuyses, a front-end developer in Paris">
+  <meta name="twitter:description" content="Portfolio d'Emilie Tombuyses, développeuse front-end à Paris">
   <meta name="twitter:image" content="https://www.emilietombuyses.com/assets/images/site-preview.jpg">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -52,8 +52,8 @@
         <span class="menuArea__title">Menu</span>
         <ul class="menuArea__linkList">
           <li class="menuArea__linkItem"><a class="menuArea__link" href="#">Home</a></li>
-          <li class="menuArea__linkItem"><a class="menuArea__link" href="#about">Who I am</a></li>
-          <li class="menuArea__linkItem"><a class="menuArea__link" href="#myworks">My works</a></li>
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#about">A propos de moi</a></li>
+          <li class="menuArea__linkItem"><a class="menuArea__link" href="#myworks">Mes projets</a></li>
           <li class="menuArea__linkItem"><a class="menuArea__link" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -63,31 +63,30 @@
   <main id="main">
     <div id='cursor' class="cursor"></div>
     <section id="home" class="home">
-      <h1 class="home__title">Emilie Tombuyses</h1>
+      <h1 class="home__title"><span>Emilie</span> <span>Tombuyses</span></h1>
       <h2 id="job" class="home__subtitle subtitle">
         <span class="subtitle__letters subtitle__letters--front">Front-end</span>
         <span class="subtitle__letters subtitle__letters--dev">developer</span>
       </h2>
-      <svg width="43" height="55" viewBox="0 0 43 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0)">
-          <path d="M0 32.6667L-3.75918e-07 24.0667L25.8 24.0667L35.8333 32.6667L0 32.6667Z" fill="#56BAE4" />
-          <rect y="12.6" width="7.16667" height="30.1" fill="#0D2D3F" />
-          <path d="M0 55.3L3.91581e-07 46.7L32.9667 46.7L43 55.3L0 55.3Z" fill="#0D2D3F" />
-          <path d="M0 1.92231e-06L3.91581e-07 8.6L32.9667 8.6L43 1.87959e-06L0 1.92231e-06Z" fill="#0D2D3F" />
-        </g>
-        <defs>
-          <clipPath>
-            <rect width="43" height="55" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
       <div id="flipcard" class="home__flipcard flipcard">
         <div class="flipcard__inner">
           <div class="flipcard__side">
-            <p class="flipcard__text flipcard__text--small">Hello</p>
+            <svg width="43" height="55" viewBox="0 0 43 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path d="M0 32.6667L-3.75918e-07 24.0667L25.8 24.0667L35.8333 32.6667L0 32.6667Z" fill="#56BAE4" />
+                <rect y="12.6" width="7.16667" height="30.1" fill="#0D2D3F" />
+                <path d="M0 55.3L3.91581e-07 46.7L32.9667 46.7L43 55.3L0 55.3Z" fill="#0D2D3F" />
+                <path d="M0 1.92231e-06L3.91581e-07 8.6L32.9667 8.6L43 1.87959e-06L0 1.92231e-06Z" fill="#0D2D3F" />
+              </g>
+              <defs>
+                <clipPath>
+                  <rect width="43" height="55" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
           </div>
           <div class="flipcard__side flipcard__side--back">
-            <p class="flipcard__text">Welcome to my portfolio</p>
+            <p class="flipcard__text">Bienvenue sur mon portfolio</p>
           </div>
         </div>
       </div>
@@ -95,21 +94,21 @@
     </section>
 
     <section id="about" class="about" data-color="dark">
-      <h2 class="about__title title">Who I am </h2>
-      <p class="about__text">Hello dear visitor, I am <strong>Emilie Tombuyses</strong>, a young front-end developer.
-      </p>
-      <p class="about__text"> I am in my 1st year of Bachelor Web at <a class="about__link" target="_blank"
-          rel="noopener" href="https://www.hetic.net/formations/bachelor-web/programme-bachelor-web">HETIC</a> and I am
-        passioned by <abbr title="HyperText Markup Language">HTML</abbr> <abbr title="Cascading Style Sheets">CSS</abbr>
-        and JavaScript.
-        I am someone curious who is always ready to learn new things and ask questions.</p>
-      <p class="about__text">I am currently looking for a 3-month <strong>internship in Paris</strong> between July and
-        21 September. I am also interested in
-        an <strong>apprenticeship</strong> for next year. </p>
+      <h2 class="about__title title">A propos de moi</h2>
+      <p class="about__text">Bonjour et bienvenue sur mon portfolio.</p>
+      <p class="about__text">Diplômée d'un bachelor web à <a class="about__link" target="_blank" rel="noopener"
+          href="https://www.hetic.net/formations/bachelor-web/programme-bachelor-web">HETIC</a> depuis 2021 et forte
+        d'une expérience de 3 ans chez OWNEST dans le développement de web applications, je suis à la recherche d'une
+        nouvelle aventure.</p>
+      <p class="about__text">Je suis passionnée par le développement d'applications et aimerait à l'avenir pouvoir
+        développer des applications natives.</p>
+      <p class="about__text">Je me suis d'ailleurs lancée tout récemment dans l'apprentissage de Kotlin sur mon temps
+        libre.</p>
+      <p class="about__text">Je serais intéressée de travailler sur un projet en React native ou Kotlin.</p>
     </section>
 
     <section id="myworks" class="myworks">
-      <h2 class="myworks__title title">My works</h2>
+      <h2 class="myworks__title title">Mes projets</h2>
       <div id="works" class="works">
         <div id="line" class="works__line"></div>
       </div>
@@ -134,17 +133,18 @@
       <address class="contact__info">
         <div class="contact__name">Emilie Tombuyses</div>
         <a class="contact__link mail" href="mailto:e.tombuyses@gmail.com">e.tombuyses@gmail.com</a><br>
-        +32 493 58 24 09<br>
-        Île de France
+        +33 6 74 03 89 51<br>
+        Paris
         <ul class="contact__links">
           <li>
-            <a class="contact__link" href="https://github.com/ETombuyses" title="My github profile" target="_blank"
-              rel="noopener noreferrer nofollow external"><i class="fab fa-2x fa-github"></i></a></li>
+            <a class="contact__link" href="https://github.com/ETombuyses" title="Mon github" target="_blank"
+              rel="noopener noreferrer nofollow external"><i class="fab fa-2x fa-github"></i></a>
+          </li>
           <li><a class="contact__link" href="https://www.linkedin.com/in/emilie-tombuyses-front-end-developer/"
-              title="My linkedin profile" target="_blank" rel="noopener noreferrer nofollow external"><i
+              title="Mon profil LinkedIn" target="_blank" rel="noopener noreferrer nofollow external"><i
                 class="fab fa-2x fa-linkedin-in"></i></a></li>
-          <li><a class="contact__link" href="https://codepen.io/ETombuyses" title="My codepen profile" target="_blank"
-              rel="noopener noreferrer nofollow external"><i class="fab fa-2x fa-codepen"></i></a></li>
+          <li><a class="contact__link" href="/assets/pdfs/cv-emilie-tombuyses.pdf" title="Télécharger mon cv" download><i
+                class="fa fa-2x fa-file"></i></a></li>
         </ul>
       </address>
     </section>

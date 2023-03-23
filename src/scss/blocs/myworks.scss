@@ -7,12 +7,12 @@
 }
 
 .myworks__title {
-  left: -65px;
-  top: -110px;
+  left: -85px;
+  top: -130px;
   transition: top 0.5s 0.5s ease;
 
   &.is-showed {
-    top: 90px;
+    top: 112px;
   }
 
   @include desktop {
